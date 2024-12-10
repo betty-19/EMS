@@ -1,0 +1,170 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+ 
+}
+/* .wrapper{
+  background-color: black;
+  width: 100%;
+  height: auto;
+} */
+header {
+    background-color: antiquewhite;
+    width: 100%;
+    
+  }
+  
+  nav {
+    padding: 2% 3%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  nav p{
+    font-size:28px;
+    font-weight: 500;
+    margin:0;
+    padding: 0;
+  }
+  nav p span{
+    font-size:40px;
+    font-weight: 600;
+  }
+  .nav-list {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+  }
+  
+  .nav-item {
+    list-style-type: none; /* Remove bullet points */
+    font-size:15px;
+    cursor: pointer; /* Change cursor to pointer for better UX */
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .nav-item i {
+    margin-right: 5px; /* Add spacing between the icon and text */
+  }
+  .menu-icon{
+    display:none;
+    font-size: 24px;
+    cursor:pointer;
+  }
+  
+  .nav-item:hover {
+    color: blue; 
+  }
+ 
+  .home-img img{
+    width: 100%;
+    height: auto;
+  }
+  .about,.contact{
+    margin-top:50px;
+    margin-bottom:50px;
+    /* background-color:antiquewhite ; */
+  }
+  .about h2, .contact h2{
+    font-size:40px;
+    font-weight: 500;
+    text-align: center;
+  }
+  .about p{
+    font-size:28px;
+    font-weight: 350;
+    text-align: center;
+  }
+  .social-media{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:30px;
+    flex-wrap:wrap;
+  }
+  .social-media div{
+    margin-top:30px;
+    width: 70px;
+    height: 70px;
+    border-radius:50%;
+    background-color: antiquewhite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.39);
+    cursor:pointer;
+    transition:all  0.5s ease-in-out;
+  }
+  .social-media div:hover{
+    transform: translateY(-10px);
+  }
+  .social-media div i{
+    font-size:28px;
+   color: rgb(243, 141, 9);
+  }
+  footer{
+    margin-top:30px;
+    background-color: antiquewhite;
+    margin-bottom:0;
+    height: auto;
+    text-align: center;
+    font-size:20px;
+    padding: 2% 3%;
+
+  }
+
+
+
+  
+  @media (max-width: 520px) {
+    .nav-list {
+      display: none; /* Hide the nav list by default */
+      flex-direction: column;
+      position: absolute;
+      top: 60px; /* Adjust as per your header height */
+      right: 0px;
+      background-color: #fff; /* Background for the dropdown */
+      padding: 5%;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+  
+    .nav-list.open {
+      display: flex; /* Show the nav list when menu is open */
+    }
+  
+    .menu-icon {
+      display: block; /* Show the menu icon */
+    }
+  }
+  @media (max-width: 328px){
+    .social-media{
+      gap:30px;
+      margin-top:20px;
+    }
+    .social-media div{
+    margin:0;
+      width: 50px;
+      height: 50px;
+    
+    }
+    .social-media div i{
+      font-size:20px;
+    }
+    .about p{
+    font-size:20px;
+    font-weight: 400;
+    }
+    .about h2, .contact h2{
+      font-size:30px;
+      font-weight: 500;
+    }
+    footer{
+      font-size:15px;
+     
+    }
+    
+  }
