@@ -1,15 +1,26 @@
 import React, {useState} from 'react'
+import { useNavigate } from 'react-router-dom';
 import '../assets/Home.css'
 import expenditureImage from '../assets/Expenditure.jpg'
+// import Signup from './Signup.jsx';
 
 
 function Home(){
 
   const [menuOpen, setMenuOpen] = useState(false);
+  // const [signUp, setSignUp] =useState(false);
+  const nav = useNavigate();
+
 
   const toggleMenu = () =>{
          setMenuOpen(!menuOpen);
   };
+  const handleSignUpClick = () =>{
+    nav('/signup');
+  }
+  const handleCloseSignUp = () =>{
+    setSignUp(false);
+  }
 
   return(
   <div className='wrapper'>
@@ -21,7 +32,7 @@ function Home(){
                </div>
                 <ul className={`nav-list ${menuOpen ? 'open' : ''}`}>
                     <li className='nav-item'>Home</li>
-                    <li className='nav-item'><i class="bi bi-person-fill"></i>SignUp/Login</li>
+                    <li className='nav-item' onClick={handleSignUpClick}><i class="bi bi-person-fill"></i>SignUp/Login</li>
                     <li className='nav-item'>
                         About
                     </li>
@@ -32,13 +43,15 @@ function Home(){
           
         </nav>
     </header>
+    {/* {signUp && <Signup />} */}
+    {/* {signUp && <Signup closeSignUp={handleCloseSignUp}/>} */}
     <div className='home-img'>
     <img src={expenditureImage} alt="Expenditure" />
 
     </div>
     <div id="about" className="about">
            <h2>About</h2>
-           <p>It is Expenditure Management system used to know who purchase what.</p>
+           <p>EMS stands for Expenditure managment system. It's feature include create group to manage expenditure, add your expenditure, follow who purchase what, calculate the amount of money each group member expenditure.</p>
     </div>
     <div id="contact" className="contact">
            <h2>Contact Us</h2>
@@ -51,8 +64,9 @@ function Home(){
     <footer>
 <p>&copy;All right reserved</p>
     </footer>
-
+    
   </div>
+
   );
 }
 

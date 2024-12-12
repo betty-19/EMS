@@ -4,11 +4,6 @@
   box-sizing: border-box;
  
 }
-/* .wrapper{
-  background-color: black;
-  width: 100%;
-  height: auto;
-} */
 header {
     background-color: antiquewhite;
     width: 100%;
@@ -35,20 +30,21 @@ header {
     display: flex;
     align-items: center;
     gap: 20px;
-    padding: 0; /* Remove default padding */
-    margin: 0; /* Remove default margin */
+    padding: 0; 
+    margin: 0; 
   }
   
   .nav-item {
-    list-style-type: none; /* Remove bullet points */
+    list-style-type: none; 
     font-size:15px;
-    cursor: pointer; /* Change cursor to pointer for better UX */
+    cursor: pointer; 
     font-weight: 500;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.5s ease-in-out;
+   
   }
   
   .nav-item i {
-    margin-right: 5px; /* Add spacing between the icon and text */
+    margin-right: 5px; 
   }
   .menu-icon{
     display:none;
@@ -57,7 +53,10 @@ header {
   }
   
   .nav-item:hover {
-    color: blue; 
+    color: white; 
+    padding:10px 15px;
+    background-color: rgba(128, 128, 128, 0.527);
+    border-radius:15px;
   }
  
   .home-img img{
@@ -67,7 +66,7 @@ header {
   .about,.contact{
     margin-top:50px;
     margin-bottom:50px;
-    /* background-color:antiquewhite ; */
+   
   }
   .about h2, .contact h2{
     font-size:40px;
@@ -75,7 +74,7 @@ header {
     text-align: center;
   }
   .about p{
-    font-size:28px;
+    font-size:20px;
     font-weight: 350;
     text-align: center;
   }
@@ -122,22 +121,22 @@ header {
   
   @media (max-width: 520px) {
     .nav-list {
-      display: none; /* Hide the nav list by default */
+      display: none; 
       flex-direction: column;
       position: absolute;
-      top: 60px; /* Adjust as per your header height */
+      top: 60px; 
       right: 0px;
-      background-color: #fff; /* Background for the dropdown */
+      background-color: #fff;
       padding: 5%;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
   
     .nav-list.open {
-      display: flex; /* Show the nav list when menu is open */
+      display: flex; 
     }
   
     .menu-icon {
-      display: block; /* Show the menu icon */
+      display: block; 
     }
   }
   @media (max-width: 328px){
@@ -155,7 +154,7 @@ header {
       font-size:20px;
     }
     .about p{
-    font-size:20px;
+    font-size:16px;
     font-weight: 400;
     }
     .about h2, .contact h2{
