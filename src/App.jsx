@@ -4,6 +4,7 @@ import Home from './Components/Home.jsx'
 import Signup from './Components/Signup.jsx'
 import EventRegistration from './Components/EventRegistration.jsx';
 import ViewRegistration from './Components/ViewRegistration.jsx';
+
 function App() {
   console.log('App rendered');
   return (

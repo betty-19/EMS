@@ -62,7 +62,7 @@ align-items: center;
     /* background-color: black; */
   }
   .buttons button{
-    padding:10px 15px;
+    padding:10px 30px;
   }
   .buttons button:nth-child(2){
     margin-left: 20px;

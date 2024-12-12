@@ -134,16 +134,25 @@ header {
     .nav-list.open {
       display: flex; 
     }
+    .nav-item:hover {
+      color: blue; 
+      padding:0px;
+      background-color: transparent;
+      border-radius:0px;
+     
+    }
   
     .menu-icon {
       display: block; 
     }
+   
   }
   @media (max-width: 328px){
     .social-media{
       gap:30px;
       margin-top:20px;
     }
+    
     .social-media div{
     margin:0;
       width: 50px;
