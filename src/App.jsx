@@ -4,6 +4,7 @@ import Home from './Components/Home.jsx'
 import Signup from './Components/Signup.jsx'
 import EventRegistration from './Components/EventRegistration.jsx';
 import ViewRegistration from './Components/ViewRegistration.jsx';
+import Detail from './Components/Detail.jsx';
 
 function App() {
   console.log('App rendered');
@@ -14,6 +15,7 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/eventRegistration" element={<EventRegistration/>} />
         <Route path="/viewRegistration" element={<ViewRegistration/>} />
+        <Route path="/detail" element={<Detail/>} />
       </Routes>
     </Router>
   );

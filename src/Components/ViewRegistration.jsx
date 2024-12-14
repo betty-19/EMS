@@ -1,7 +1,16 @@
 import React, {useEffect, useState} from 'react'
+import { useNavigate } from 'react-router-dom'
 
 import '../assets/viewRegistration.css'
+import expenditureImage from '../assets/Expenditure.jpg' 
+
+
 function ViewRegistration(){
+    const nav = useNavigate();
+     
+    const handleViewDetail =()=>{
+        nav("/detail");
+    }
 
     const [data, setData] =useState([])
 
@@ -12,37 +21,13 @@ function ViewRegistration(){
         .then(err => console.log(err));
     },[]);
 return(
-    <div className="">
-        <table class="table table-hover">
- <thead>
-    <th>ID</th>
-    <th>Full Name
-    </th>
-    <th>username
-    </th>
- </thead>
- <tbody>
-    {data.map((d,i)=>(
-        <tr key={i}>
-            <td>
-                {d.id} 
-            </td>
-            <td>
-                {d.Full_Name} 
-            </td>
-            <td>
-                {d.username} 
-            </td>
-        </tr>
-    ))}
- </tbody>
-</table>
+    <div className="view table">
 <main className='table'>
     <section>
-        <h1>Customer's Orders'</h1>
+        <h1>Customer's Orders</h1>
     </section>
     <section className='table_body'>
-        <table>
+        <table className='table table-hover'>
             <thead>
                 <tr>
                     <th> id </th>
@@ -54,36 +39,28 @@ return(
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td><img src="../assets/Expenditure.jpg" alt="" /></td>
-                    <td>Addis Ababa</td>
-                    <td>17 Dec, 2022</td>
-                    <td>
-                        <p className='status delivered '>Delivered</p>
-                    </td>
-                    <td>$128.90</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td><img src="../assets/Expenditure.jpg" alt="" /></td>
-                    <td>Addis Ababa</td>
-                    <td>17 Dec, 2022</td>
-                    <td>
-                        <p className='status delivered '>Delivered</p>
-                    </td>
-                    <td>$128.90</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td><img src="../assets/Expenditure.jpg" alt="" /></td>
-                    <td>Addis Ababa</td>
-                    <td>17 Dec, 2022</td>
-                    <td>
-                        <p className='status Cancelled '>Cancelled</p>
-                    </td>
-                    <td>$128.90</td>
-                </tr>
+            {data.map((d,i)=>(
+        <tr key={i}>
+            <td>
+                {d.Id} 
+            </td>
+            <td>
+                {d.Full_Name} 
+            </td>
+            <td>
+                {d.username} 
+            </td>
+            <td>
+                {d.password} 
+            </td>
+            <td>
+                {d.Id} 
+            </td>
+            <td className='btn-v'>
+                <button onClick={handleViewDetail}>View Detail</button> 
+            </td>
+        </tr>
+    ))}
             </tbody>
         </table>
 

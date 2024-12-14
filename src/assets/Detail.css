@@ -1,0 +1,20 @@
+.img-cl button{
+border: none;
+outline:none;
+border-radius: 10px;
+padding:10px 20px;
+background-color: transparent;
+border:gold 2px solid;
+color:black;
+transition: all ease-in-out .4s;
+}
+.img-cl button:hover{
+background-color: gold;
+}
+.img-cl img{
+    width: 300px;
+    height: 250px;
+    margin-right: .5rem;
+    border-radius:5%;
+    vertical-align: middle;
+}
