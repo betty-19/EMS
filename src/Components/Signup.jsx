@@ -22,6 +22,9 @@ function Signup() {
     console.log("Navigating to /eventRegistration");
 nav("/eventRegistration");
   }
+  const handleSignUp = () =>{
+    nav("/viewRegistration");
+  }
 
   return (
     <div className="sl-wrapper">
@@ -110,7 +113,7 @@ nav("/eventRegistration");
             >
               Cancel
             </button>
-            <button type="button" className="btn btn-outline-success">
+            <button type="button" className="btn btn-outline-success" onClick={handleSignUp}>
               Sign Up
             </button>
           </div>
