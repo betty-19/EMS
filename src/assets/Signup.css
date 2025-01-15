@@ -9,7 +9,7 @@ display: flex;
 justify-content: center;
 align-items: center;
  }
-.signup-login,.register, .detail {
+.signup-login,.register {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -21,6 +21,7 @@ align-items: center;
     /* padding: 10% auto; */
     border-radius: 25px;
     box-shadow: -1px 3px 10px rgb(172, 167, 165);
+    margin:5%;
     /* padding:75%; */
   }
   .title{
@@ -103,3 +104,8 @@ align-items: center;
     font-size: 50px;
     cursor:pointer;
 } */
+ @media(max-width: 530px){
+  .signup-wrapper  .buttons button{
+    padding:10px;
+  }
+ }

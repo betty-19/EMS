@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Alfa+Slab+One&display=swap');
+* {
+    margin:0;
+    padding:0;
+    border:none;
+    outline:none;
+    list-style: none;
+    box-sizing: border-box;
+}
+.sidebar{
+    color: #fff;
+    width: 250px; 
+    transition: width 0.3s ease; 
+    position: fixed;
+    left: -250px; 
+    background-color: #001529; 
+    z-index: 1000;
+}
+.sidebar.visible {
+    left: 0; 
+}
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding:10px;
+    /* width: 100%; */
+    
+}
+.icons{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ /* background-color: red; */
+ width:100%;
+ max-width: 500px;
+ /* margin:10px 15px; */
+}
+.icons .logo-icon{
+    font-size: 1.5rem;
+    /* padding: 0; */
+    
+}
+/* .icons i{
+    display:none;
+} */
+.menu-bar{
+    height: 100vh;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    font-size:1rem;
+    position: relative;
+    transition: all 0.7s ease-in-out;
+}
+.menu-bar-icon {
+    display: none; 
+    /* top: 15px;
+    left: 15px; */
+      
+    transition: all 0.7s ease-in-out;
+    color: #001529;
+    z-index: 1100;
+    cursor: pointer;
+    background-color: #001529;
+}
+.menuu-icon{
+  font-size: 32px;
+ color:#fff;
+  margin:20px;
+}
+.content-area {
+    /* padding: 24px; */
+    background-color: #f0f2f5;
+    /* margin-left: 0; */
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 150px; 
+     
+    }
+
+    .menu-bar {
+        font-size: 0.8rem; 
+    }
+
+    .icons {
+       
+        font-size: 1.2rem;
+    }
+    .menu-bar-icon {
+        display: block; 
+    }
+    .content-area{
+        margin-left:0;
+    }
+}
+
+
+
+@media (min-width: 769px) {
+    .sidebar {
+        left: 0; 
+        width: 250px;
+    }
+
+    .menu-bar-icon {
+        display: none; 
+    }
+
+    .content-area {
+        margin-left: 250px;
+    }
+}
+
+/* Media Query for Extra Small Screens */
+@media (max-width: 480px) {
+    .sidebar {
+        width: 100px; 
+    }
+
+    .menu-bar {
+        font-size: 0.7rem; 
+    }
+
+    .logo-icon {
+        width: 25px;
+        height: 25px;
+        font-size: 1rem;
+    }
+}

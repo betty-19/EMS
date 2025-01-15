@@ -16,7 +16,7 @@ function Home(){
          setMenuOpen(!menuOpen);
   };
   const handleSignUpClick = () =>{
-    nav('/signup');
+    nav('/sidebarTwo');
   }
   const handleCloseSignUp = () =>{
     setSignUp(false);

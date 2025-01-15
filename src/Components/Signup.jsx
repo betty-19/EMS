@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useRef } from "react";
 import "../assets/Signup.css";
 import { useNavigate } from "react-router-dom";
 
@@ -18,12 +18,77 @@ function Signup() {
   const handleSignUpClick = () => {
     setLogin(false);
   };
-  const handleLoginBtn = () =>{
-    console.log("Navigating to /eventRegistration");
-nav("/eventRegistration");
-  }
+  const handleLoginBtn = () => {
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("LoginPassword").value;
+
+    console.log("Username:", username);
+    console.log("Password:", password);
+
+    fetch("http://localhost:3000/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ username, password }),
+    })
+      .then((response) => {
+       
+        if (response.headers.get("content-type").includes("application/json")) {
+          return response.json();
+        } else {
+          return response.text(); 
+        }
+      })
+      .then((data) => {
+        if (typeof data === "string") {
+          console.log("Response text:", data);
+          alert(data); 
+        } else {
+          console.log("Response JSON:", data);
+          alert(data.message);
+        }
+      })
+      .catch((error) => {
+        console.error("Error during login:", error);
+        alert("Login failed. Please check your username and password.");
+      });
+};
+
+  
   const handleSignUp = () =>{
-    nav("/viewRegistration");
+        const fullName = document.getElementById("fullName").value;
+        const password = document.getElementById("password").value;
+        const confirmPassword = document.getElementById("confirmPassword").value;
+        const username = document.getElementById("usernameSignup").value;
+    // nav("/viewRegistration");
+    if(password !== confirmPassword){
+      alert("Password do not match");
+      return;
+    }
+
+    fetch("http://localhost:3000/signUp", {
+      method: "POST",
+      headers: {
+        "Content-Type" : "application/json",
+      },
+      body: JSON.stringify({fullName, username, password}),
+    })
+    .then((response) =>{
+      if(response.ok){
+        alert("User registered successfully");
+        nav("/viewRegistration");
+      }
+      else{
+        alert("Faild to register user");
+      }
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+      alert("An error occurred");
+    });
+
+
   }
 
   return (
@@ -36,24 +101,24 @@ nav("/eventRegistration");
       {login ? (
         <div className="login-wrapper">
           <div className="mb-3">
-            <label htmlFor="formGroupExampleInput" className="form-label">
+            <label htmlFor="username" className="form-label">
               Username
             </label>
             <input
               type="text"
               className="form-control"
-              id="formGroupExampleInput"
-              placeholder="Enter Full Name"
+              id="username"
+              placeholder="Enter username"
             />
           </div>
           <div className="mb-3">
-            <label htmlFor="formGroupExampleInput2" className="form-label">
+            <label htmlFor="LoginPassword" className="form-label">
               Password
             </label>
             <input
-              type="text"
+              type="password"
               className="form-control"
-              id="formGroupExampleInput2"
+              id="LoginPassword"
               placeholder="Enter Password"
             />
           </div>
@@ -73,35 +138,46 @@ nav("/eventRegistration");
       ) : (
         <div className="signup-wrapper">
           <div className="mb-3">
-            <label htmlFor="formGroupExampleInput" className="form-label">
+            <label htmlFor="fullName" className="form-label">
               Full Name
             </label>
             <input
               type="text"
               className="form-control"
-              id="formGroupExampleInput"
+              id="fullName"
               placeholder="Enter Full Name"
             />
           </div>
           <div className="mb-3">
-            <label htmlFor="formGroupExampleInput2" className="form-label">
-              Password
+            <label htmlFor="usernameSignup" className="form-label">
+              Username
             </label>
             <input
               type="text"
               className="form-control"
-              id="formGroupExampleInput2"
+              id="usernameSignup"
+              placeholder="Enter Username"
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="password" className="form-label">
+              Password
+            </label>
+            <input
+              type="password"
+              className="form-control"
+              id="password"
               placeholder="Enter Password"
             />
           </div>
           <div className="mb-3">
-            <label htmlFor="formGroupExampleInput3" className="form-label">
+            <label htmlFor="confirmPassword" className="form-label">
               Confirm Password
             </label>
             <input
-              type="text"
+              type="password"
               className="form-control"
-              id="formGroupExampleInput3"
+              id="confirmPassword"
               placeholder="Confirm Password"
             />
           </div>
